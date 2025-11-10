@@ -1,65 +1,150 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen">
+      {/* Header/Navigation */}
+      <header className="fixed top-0 w-full z-50 bg-graphite/90 backdrop-blur-sm border-b border-graphite-light">
+        <nav className="container mx-auto px-6 py-4">
+          <div className="flex justify-between items-center">
+            <div className="text-2xl font-bold">
+              EOF<span className="text-turquoise">.</span>
+            </div>
+            <ul className="flex gap-8">
+              <li>
+                <a 
+                  href="#about" 
+                  className="text-foreground hover:text-turquoise transition-colors duration-300"
+                >
+                  Who am I
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#services" 
+                  className="text-foreground hover:text-turquoise transition-colors duration-300"
+                >
+                  Services
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#contact" 
+                  className="text-foreground hover:text-turquoise transition-colors duration-300"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center justify-center pt-20">
+        <div className="container mx-auto px-6 text-center">
+          <h1 className="text-6xl md:text-7xl font-bold mb-6">
+            EOF Software Studios
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-xl md:text-2xl text-gray-400 mb-8">
+            Crafting Excellence in Software Engineering
           </p>
+          <div className="w-24 h-1 bg-turquoise mx-auto"></div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Who am I Section */}
+      <section id="about" className="min-h-screen flex items-center py-20">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+            Who am I
+          </h2>
+          <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
+            <p>
+              I&apos;m a freelance software engineer passionate about creating elegant, 
+              efficient solutions to complex problems. With expertise across the full stack, 
+              I bring ideas to life through clean code and thoughtful design.
+            </p>
+            <p>
+              At EOF Software Studios, I focus on delivering high-quality software that 
+              makes a difference. Every project is an opportunity to craft something exceptional.
+            </p>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="min-h-screen flex items-center py-20 bg-graphite">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
+            Services
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="bg-graphite-light p-8 rounded-lg border border-gray-700 hover:border-turquoise transition-all duration-300">
+              <h3 className="text-2xl font-semibold mb-4 text-turquoise">
+                Web Development
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                Custom web applications built with modern frameworks and best practices. 
+                Responsive, performant, and user-friendly.
+              </p>
+            </div>
+            <div className="bg-graphite-light p-8 rounded-lg border border-gray-700 hover:border-turquoise transition-all duration-300">
+              <h3 className="text-2xl font-semibold mb-4 text-turquoise">
+                Software Architecture
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                Scalable system design and architecture consulting. Making sure your 
+                software foundation is solid and future-proof.
+              </p>
+            </div>
+            <div className="bg-graphite-light p-8 rounded-lg border border-gray-700 hover:border-turquoise transition-all duration-300">
+              <h3 className="text-2xl font-semibold mb-4 text-turquoise">
+                API Development
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                RESTful and GraphQL APIs designed for performance and ease of integration. 
+                Robust, documented, and secure.
+              </p>
+            </div>
+            <div className="bg-graphite-light p-8 rounded-lg border border-gray-700 hover:border-turquoise transition-all duration-300">
+              <h3 className="text-2xl font-semibold mb-4 text-turquoise">
+                Code Review & Consulting
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                Expert code reviews and technical consulting to improve code quality, 
+                performance, and maintainability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="min-h-screen flex items-center py-20">
+        <div className="container mx-auto px-6 max-w-4xl text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12">
+            Contact
+          </h2>
+          <div className="space-y-8">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Ready to start your next project? Let&apos;s discuss how I can help 
+              bring your ideas to life.
+            </p>
+            <a 
+              href="mailto:hello@eofsoftwarestudios.com" 
+              className="inline-block bg-turquoise hover:bg-turquoise-dark text-background font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-lg"
+            >
+              hello@eofsoftwarestudios.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-graphite border-t border-graphite-light py-8">
+        <div className="container mx-auto px-6 text-center text-gray-400">
+          <p>&copy; 2024 EOF Software Studios. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 }
