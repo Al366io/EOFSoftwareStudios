@@ -115,7 +115,7 @@ export default function Home() {
             className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium rounded-full px-8"
             asChild
           >
-            <a href="mailto:contact@eofsoftware.dev">
+            <a href="mailto:alessionannipieri@eofsoftwarestudios.com">
               <MailIcon className="mr-2 h-5 w-5" />
               Get in Touch
             </a>
