@@ -1,118 +1,101 @@
-import { Button } from "@/components/ui/button";
-import { MailIcon } from "@/components/ui/icons/lucide-mail";
+import { Button } from "@/components/ui/button"
+import { MailIcon, ArrowDownIcon } from "lucide-react"
+import { ParticlesBackground } from "@/components/particles-background"
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background text-foreground relative snap-y snap-mandatory overflow-y-scroll h-screen">
+      <ParticlesBackground />
+
       {/* Header/Navigation */}
-      <header className="fixed top-0 w-full z-50 bg-color3 backdrop-blur-sm border-b border-graphite-light">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <nav className="container mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <img src="/favicon.ico" alt="EOF Software Studios Logo" className="h-12 w-auto rounded-md" />
-            <ul className="flex gap-8">
-              <li>
-                <a
-                  href="#about"
-                  className="text-foreground transition-colors duration-300 hover:text-graphite"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  className="text-foreground hover:text-graphite transition-colors duration-300"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="text-foreground hover:text-graphite transition-colors duration-300"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
+          <div className="flex items-center justify-between">
+            <div className="text-xl font-semibold tracking-tight">EOF Software Studios</div>
+            <div className="flex gap-8 text-sm">
+              <a href="#about" className="hover:text-accent transition-colors">
+                About
+              </a>
+              <a href="#services" className="hover:text-accent transition-colors">
+                Services
+              </a>
+              <a href="#contact" className="hover:text-accent transition-colors">
+                Contact
+              </a>
+            </div>
           </div>
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex bg-graphite/100 items-center justify-center pt-20">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-6xl md:text-7xl font-bold mb-6">
-            EOF Software Studios
+      <section className="snap-start snap-always min-h-screen flex items-center justify-center px-6 relative">
+        <div className="container mx-auto text-center max-w-4xl">
+          <h1 className="text-5xl md:text-7xl font-light mb-6 tracking-tight text-balance">
+            Crafting Digital Excellence
           </h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-8">
-            Crafting Excellence in Software Engineering
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 text-balance max-w-2xl mx-auto">
+            Freelance software development for forward-thinking businesses
           </p>
-          <div className="w-24 h-1 bg-color1 mx-auto"></div>
+          <a href="#about">
+            <Button variant="ghost" size="icon" className="rounded-full hover:bg-accent/10">
+              <ArrowDownIcon className="h-5 w-5" />
+            </Button>
+          </a>
         </div>
       </section>
 
-      {/* Who am I Section */}
-      <section id="about" className="min-h-screen bg-graphite/90 flex items-center py-20">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-            Who am I
-          </h2>
-          <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
+      {/* About Section */}
+      <section id="about" className="snap-start snap-always min-h-screen flex items-center justify-center px-6">
+        <div className="container mx-auto max-w-3xl">
+          <h2 className="text-3xl md:text-5xl font-light mb-12 tracking-tight">About</h2>
+          <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
             <p>
-              I&apos;m a freelance software engineer passionate about creating elegant,
-              efficient solutions to complex problems. With expertise across the full stack,
-              I bring ideas to life through clean code and thoughtful design.
+              EOF Software Studios is a freelance software development studio focused on delivering exceptional digital
+              solutions. I partner with businesses to transform their ideas into elegant, functional software.
             </p>
             <p>
-              At EOF Software Studios, I focus on delivering high-quality software that
-              makes a difference. Every project is an opportunity to craft something exceptional.
+              With expertise across modern web technologies and a commitment to clean, maintainable code, I help clients
+              build products that are both beautiful and reliable.
             </p>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="min-h-screen flex items-center py-20 bg-graphite/100">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
-            Services
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-graphite-light p-8 rounded-lg border border-gray-700 hover:border-turquoise transition-all duration-300">
-              <h3 className="text-2xl font-semibold mb-4 text-color1">
-                Web Development
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                Custom web applications built with modern frameworks and best practices.
-                Responsive, performant, and user-friendly.
+      <section id="services" className="snap-start snap-always min-h-screen flex items-center justify-center px-6">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-3xl md:text-5xl font-light mb-16 tracking-tight">Services</h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-3">
+              <div className="text-6xl font-light text-accent">01</div>
+              <h3 className="text-xl font-medium">Web Development</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Modern web applications built with cutting-edge frameworks. Responsive, performant, and designed for
+                scale.
               </p>
             </div>
-            <div className="bg-graphite-light p-8 rounded-lg border border-gray-700 hover:border-turquoise transition-all duration-300">
-              <h3 className="text-2xl font-semibold mb-4 text-color1">
-                Software Architecture
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                Scalable system design and architecture consulting. Making sure your
-                software foundation is solid and future-proof.
+            <div className="space-y-3">
+              <div className="text-6xl font-light text-accent">02</div>
+              <h3 className="text-xl font-medium">System Architecture</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Thoughtful architecture and system design that grows with your business. Future-proof foundations for
+                long-term success.
               </p>
             </div>
-            <div className="bg-graphite-light p-8 rounded-lg border border-gray-700 hover:border-turquoise transition-all duration-300">
-              <h3 className="text-2xl font-semibold mb-4 text-color1">
-                API Development
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                RESTful and GraphQL APIs designed for performance and ease of integration.
-                Robust, documented, and secure.
+            <div className="space-y-3">
+              <div className="text-6xl font-light text-accent">03</div>
+              <h3 className="text-xl font-medium">API Development</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Robust APIs designed for performance and developer experience. RESTful and GraphQL solutions that power
+                your applications.
               </p>
             </div>
-            <div className="bg-graphite-light p-8 rounded-lg border border-gray-700 hover:border-turquoise transition-all duration-300">
-              <h3 className="text-2xl font-semibold mb-4 text-color1">
-                Code Review & Consulting
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                Expert code reviews and technical consulting to improve code quality,
-                performance, and maintainability.
+            <div className="space-y-3">
+              <div className="text-6xl font-light text-accent">04</div>
+              <h3 className="text-xl font-medium">Technical Consulting</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Expert guidance on technology decisions, code quality, and best practices. Strategic technical
+                leadership for your projects.
               </p>
             </div>
           </div>
@@ -120,33 +103,32 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="min-h-screen flex items-center bg-graphite/90 py-20">
-        <div className="container mx-auto px-6 max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12">
-            Contact
-          </h2>
-          <div className="space-y-8">
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Ready to start your next project? Let&apos;s discuss how I can help
-              bring your ideas to life.
-            </p>
-            
-            <Button
-              className="d-flex bg-color1 text-background font-semibold px-12 py-6 rounded-lg transition-all duration-300 text-lg">
-              <MailIcon className="size-6" />
-              <a href="mailto:alessionannipieri@eofsoftwarestudios.com"> Email Me </a>
-            </Button>
-
-          </div>
+      <section id="contact" className="snap-start snap-always min-h-screen flex items-center justify-center px-6">
+        <div className="container mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl md:text-5xl font-light mb-8 tracking-tight">Let's Work Together</h2>
+          <p className="text-lg text-muted-foreground mb-12 text-balance max-w-xl mx-auto leading-relaxed">
+            Have a project in mind? I'd love to hear about it. Get in touch to discuss how we can bring your vision to
+            life.
+          </p>
+          <Button
+            size="lg"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium rounded-full px-8"
+            asChild
+          >
+            <a href="mailto:contact@eofsoftware.dev">
+              <MailIcon className="mr-2 h-5 w-5" />
+              Get in Touch
+            </a>
+          </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-graphite border-t border-graphite-light py-8">
-        <div className="container mx-auto px-6 text-center text-gray-400">
-          <p>&copy; 2025 EOF Software Studios. All rights reserved.</p>
+      <footer className="absolute bottom-0 left-0 right-0 border-t border-border py-6 px-6 bg-background/80 backdrop-blur-md">
+        <div className="container mx-auto text-center text-sm text-muted-foreground">
+          &copy; 2025 EOF Software Studios
         </div>
       </footer>
     </div>
-  );
+  )
 }
